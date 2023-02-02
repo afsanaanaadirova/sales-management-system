@@ -1,0 +1,33 @@
+ :root {
+    --main-bg-color: #266AEB;
+    --primary-color: #ffffff;
+}
+.menu{
+    background: var(--main-bg-color);
+    padding: 34px 28px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-logo{
+    padding-bottom: 37px;
+}
+.menu-list{
+    padding-top: 37px;
+}
+.menu-list ul{
+    
+}
+.menu-list ul li{
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.menu-list ul li svg{
+    padding: 17px 20px;
+    border-radius: 16px;
+}
+.menu-list ul li svg:hover{
+    background-color: var(--primary-color);
+    fill:var(--main-bg-color);
+}

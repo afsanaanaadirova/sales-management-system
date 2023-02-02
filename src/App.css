@@ -1,0 +1,15 @@
+.app{
+  padding: 32px 30px;
+  display: flex;
+}
+.app-main{
+  width: 100%;
+  padding-left: 58px;
+}
+.app-main--navbar{
+  display: flex;
+ justify-content: flex-end;
+}
+.app-main--table{
+  padding-top: 46px;
+}
