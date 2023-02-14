@@ -62,3 +62,10 @@ tbody td{
 /* .css-advny6-MuiPopper-root.MuiPopperUnstyled-root{
   transform: translate3d(-51.8px, 237.8px, 0px)!important;
 } */
+body{
+ background-color:#FAFAFC; 
+}
+.test{
+  position: absolute;
+  z-index: 99999;
+}
