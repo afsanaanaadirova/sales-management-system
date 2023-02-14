@@ -1,0 +1,17 @@
+.button-component--add{
+    cursor: pointer;
+    background: #266AEB!important;
+    padding: 11px 57px!important;
+    border: unset;
+    color: white;
+}
+.button-component--cancel{
+    cursor: pointer;
+    border: 1px solid #266AEB;
+    background-color: #ffffff!important;
+    color: #266AEB!important;
+    padding: 11px 46px!important;
+}
+.button-component{
+    border-radius: 8px!important;
+}

@@ -42,6 +42,7 @@ const columns = [
 
 const StickyHeadTable = () => {
 
+
   const dispatch = useDispatch();
 
   const invoices = useSelector(selecetAllInvoices);
@@ -101,7 +102,9 @@ const StickyHeadTable = () => {
                         </>
                       );
                     })}
-                      <TableCell><ThreeDotsMenu/></TableCell>
+                      <TableCell>
+                        <ThreeDotsMenu row={row}/>
+                        </TableCell>
                   </TableRow>
                 );
               })}

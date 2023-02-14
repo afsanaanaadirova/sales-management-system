@@ -117,6 +117,8 @@
 <symbol id="icon-triangle" viewBox="0 0 20 20">
 <rect y="8.4856" width="12" height="12" rx="2" transform="rotate(-45 0 8.4856)" fill="white"/>
 </symbol>
-
+<symbol id="icon-close" viewBox="0 0 18 18">
+<path d="M17 17L1 1M17 1L1 17" stroke="#212121" stroke-width="2" stroke-linecap="round"/>
+</symbol>
 </svg>
 

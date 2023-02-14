@@ -37,7 +37,11 @@ const invoicesSlice = createSlice({
                 }
             }, 
           
-        }
+        },
+        removeItem: (state, action) => {
+            const itemId = action.payload;
+            state.invoices = state.invoices.filter((item) => item.id !== itemId);
+          },
     }, 
      extraReducers(builder) {
         builder
@@ -65,6 +69,6 @@ const invoicesSlice = createSlice({
 export const selecetAllInvoices = (state) => state.invoices.invoices;
 export const getInvoicesStatus = (state) => state.invoices.status;
 export const getInvoicesError = (state) => state.invoices.error;
-export const { invoiceAdded } = invoicesSlice.actions
+export const { invoiceAdded ,removeItem} = invoicesSlice.actions
 
 export default invoicesSlice.reducer
