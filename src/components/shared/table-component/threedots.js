@@ -3,11 +3,14 @@ import IconButton from '@mui/material/IconButton';
 import Popper from '@mui/material//Popper';
 import Icon from '../../../assets/images/icons/icon';
 import DeleteModal from "../modal/delete-modal"
+import ChangeStatusModal from "../modal/change-status-modal"
 
 
 function ThreeDotsMenu(row) {
   const [deleteRowId, setDeleteRowId] = useState(null);
+  const [status, setStatus] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showStatusModal, setShowStatusModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -18,8 +21,11 @@ function ThreeDotsMenu(row) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const closeModal = () => {
+  const closeDeleteModal = () => {
     setShowDeleteModal(false)
+  };
+  const closeSatusModal = () => {
+    setShowStatusModal(false)
   };
 
   return (
@@ -29,6 +35,7 @@ function ThreeDotsMenu(row) {
         aria-controls="long-menu"
         aria-haspopup="true"
         onClick={handleClick}
+        onClose={handleClose}
       >
        <Icon name="three-dots" color="#FFFFFF" size={14}/>
       </IconButton>
@@ -41,10 +48,16 @@ function ThreeDotsMenu(row) {
         setShowDeleteModal(true)
         }
       }> <Icon name="delete" color="#FFFFFF" size={14}/><span>Sil</span></div>
-      <div className='item-icon'> <Icon name="change-status" color="#FFFFFF" size={14}/><span>Statusu dəyiş</span></div>
+      <div className='item-icon' onClick={() => {
+        setDeleteRowId(row.row.id);
+        showStatusModal ?  setShowStatusModal(false) :  setShowStatusModal(true)
+        }
+      }> <Icon name="change-status" color="#FFFFFF" size={14}/><span>Statusu dəyiş</span></div>
+      {showStatusModal && (<ChangeStatusModal showStatusModal={showStatusModal}  closeModal={closeSatusModal} deleteRowId={deleteRowId}/>)}
+
         </div>
       </Popper>
-      {showDeleteModal && (<DeleteModal showDeleteModal={showDeleteModal}  closeModal={closeModal} deleteRowId={deleteRowId}/>)}
+      {showDeleteModal && (<DeleteModal showDeleteModal={showDeleteModal}  closeModal={closeDeleteModal} deleteRowId={deleteRowId}/>)}
 
     </div>
   );

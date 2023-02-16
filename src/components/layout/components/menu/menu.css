@@ -1,7 +1,14 @@
  :root {
     --main-bg-color: #266AEB;
     --primary-color: #ffffff;
+    --status-confirm-color:#488C6E;
+    --status-confirm-bg-color:#ECFDF3;
+    --status-wait-color:#E0B300;
+    --status-wait-bg-color:#FFFAE8;
+    --status-terminated-color:#FF463D;
+    --status-terminated-bg-color:#FFF7F6;
 }
+
 .menu{
     background: var(--main-bg-color);
     padding: 34px 28px;
