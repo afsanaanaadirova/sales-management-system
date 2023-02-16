@@ -1,0 +1,68 @@
+:root {
+    --main-bg-color: #266AEB;
+    --primary-color: #ffffff;
+    --status-confirm-color:#488C6E;
+    --status-confirm-bg-color:#ECFDF3;
+    --status-wait-color:#E0B300;
+    --status-wait-bg-color:#FFFAE8;
+    --status-terminated-color:#FF463D;
+    --status-terminated-bg-color:#FFF7F6;
+}
+.status-modal{
+    position: absolute;
+    top: 96%;
+    width: 239px;
+    right: 3px;
+    background: white;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 55px rgb(0 0 0 / 7%);
+    border-radius: 12px;
+}
+.status{
+    /* padding: 20px; */
+}
+.status li {
+    border-bottom: 1px solid #F1F1F1;
+    padding: 11px 0;
+}
+.status li:nth-child(3){
+    border-bottom: unset;
+}
+.status li a{
+    border-radius: 24px;
+    padding: 6px 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    width: 213px;
+    line-height: 20px;
+    margin: 0 13px;
+    text-decoration: none;
+    display: inline-block;
+}
+.status-confirm a{
+  background-color: var(--status-confirm-bg-color);
+  color: var(--status-confirm-color);
+}
+
+.status-wait a{
+  background-color: var(--status-wait-bg-color);
+  color: var(--status-wait-color);
+}
+.status-terminated a{
+  background-color: var(--status-terminated-bg-color);
+  color: var(--status-terminated-color);
+}
+.status-modal .buttons{
+    display: flex;
+    column-gap: 16px;
+    padding: 20px;
+}
+.status-modal .button-component{
+  padding: 11px 22.5px!important;
+}
+.active-status a{
+    border: 2px solid;
+}
+

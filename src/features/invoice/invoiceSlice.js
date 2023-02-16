@@ -42,6 +42,14 @@ const invoicesSlice = createSlice({
             const itemId = action.payload;
             state.invoices = state.invoices.filter((item) => item.id !== itemId);
           },
+        changeItemStatus: (state, action) => {
+            const index = state.invoices.findIndex(item => item.id === action.payload.id)
+            if (index !== -1) {
+              state.invoices[index] = action.payload
+            } else {
+              state.invoices.push(action.payload)
+            }
+          },
     }, 
      extraReducers(builder) {
         builder
@@ -69,6 +77,6 @@ const invoicesSlice = createSlice({
 export const selecetAllInvoices = (state) => state.invoices.invoices;
 export const getInvoicesStatus = (state) => state.invoices.status;
 export const getInvoicesError = (state) => state.invoices.error;
-export const { invoiceAdded ,removeItem} = invoicesSlice.actions
+export const { invoiceAdded ,removeItem,changeItemStatus} = invoicesSlice.actions
 
 export default invoicesSlice.reducer
