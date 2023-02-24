@@ -8,7 +8,6 @@ import ChangeStatusModal from "../modal/change-status-modal"
 
 function ThreeDotsMenu(row) {
   const [deleteRowId, setDeleteRowId] = useState(null);
-  const [status, setStatus] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showStatusModal, setShowStatusModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -53,11 +52,16 @@ function ThreeDotsMenu(row) {
         showStatusModal ?  setShowStatusModal(false) :  setShowStatusModal(true)
         }
       }> <Icon name="change-status" color="#FFFFFF" size={14}/><span>Statusu dəyiş</span></div>
-      {showStatusModal && (<ChangeStatusModal showStatusModal={showStatusModal}  closeModal={closeSatusModal} deleteRowId={deleteRowId}/>)}
-
+      {showStatusModal && (<ChangeStatusModal 
+         showStatusModal={showStatusModal}  
+         closeModal={closeSatusModal} 
+         onClose={handleClose}
+         deleteRowId={deleteRowId} 
+         />)
+       }
         </div>
       </Popper>
-      {showDeleteModal && (<DeleteModal showDeleteModal={showDeleteModal}  closeModal={closeDeleteModal} deleteRowId={deleteRowId}/>)}
+      {showDeleteModal && (<DeleteModal showDeleteModal={showDeleteModal}  onClose={handleClose}  closeModal={closeDeleteModal} deleteRowId={deleteRowId}/>)}
 
     </div>
   );

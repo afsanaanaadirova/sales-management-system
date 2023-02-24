@@ -11,6 +11,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selecetAllInvoices,fetchinvoices} from "../../../features/invoice/invoiceSlice";
 import { useEffect,useState } from "react";
 import ThreeDotsMenu from "./threedots"
+import "./table-component.css"
+import Icon from '../../../assets/images/icons/icon';
 
 
 const columns = [
@@ -78,6 +80,7 @@ const StickyHeadTable = () => {
                   style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
+                  <Icon name="arrow-down" size={6}/>
                 </TableCell>
               ))}
             </TableRow>
@@ -91,15 +94,12 @@ const StickyHeadTable = () => {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <>
                         <TableCell key={column.id} align={column.align}>
                          {column.id == "customer" ? <img src={row.url}/> :""}
                           {column.format && typeof value === 'number'
                             ? column.format(value)
-                            : value}
-                            {}
+                            : column.label === "Status" ? <>{value == "təstiqlənib" ? <span className='status-label status-label--confirmed'>təstiqlənib</span> : value == "gözləyir" ? <span className='status-label status-label--wait'>gözləyir</span>: value == "xitam olunub" ? <span className='status-label status-label--cancel'>xitam olunub</span>: value}</> : value}
                         </TableCell>
-                        </>
                       );
                     })}
                       <TableCell>

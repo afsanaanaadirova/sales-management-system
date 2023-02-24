@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import ButtonComponent from '../button/button';
-import ButtonComponentCancel from '../button/cancel-button';
+import ButtonComponentCancel from '../button/secondary-button';
 import "./delete-modal.css"
 import Icon from '../../../assets/images/icons/icon';
 import { useDispatch } from 'react-redux';
@@ -23,7 +23,7 @@ const style = {
   p: 4,
 };
 
-export default function DeleteModal({showDeleteModal,closeModal,deleteRowId}) {
+export default function DeleteModal({showDeleteModal,closeModal,onClose,deleteRowId}) {
   const dispatch = useDispatch();
 
 
@@ -51,6 +51,7 @@ export default function DeleteModal({showDeleteModal,closeModal,deleteRowId}) {
               <ButtonComponent   onClick={() => {
               dispatch(removeItem(deleteRowId));
               closeModal();
+              onClose();
           }}>Sil</ButtonComponent>
             </Typography>
           </Box>

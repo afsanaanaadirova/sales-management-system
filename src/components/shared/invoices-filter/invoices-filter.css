@@ -1,0 +1,62 @@
+.invoices-filters{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 33px;
+}
+.invoices-filters--input{
+  position: relative;
+}
+.invoices-filters--input .search-input input{
+    height: 40px;
+    width: 390px;
+    padding: 0;
+    padding-left: 38px;
+    background: #FAFCFE;
+    border: 1px solid #EDEFF1;
+    border-radius: 10px;
+} 
+.invoices-filters--input .search-input input:focus{
+    border: unset;
+} 
+.invoices-filters--input .icon-search{
+    position: absolute;
+    left: 11px;
+    top: 14px;
+}
+.invoices-filters--button{
+    display: flex;
+    column-gap: 16px;
+}
+.invoices-filters--button .icon-filter{
+    width: 22px;
+    height: 20px;
+}
+.invoices-filters--button button{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+.invoices-filters--button button:nth-child(1){
+    color: #7C818D!important;
+    border-color: #7C818D;
+    padding: 11px 18px;
+}
+.invoices-filters--button button:nth-child(1) .icon-filter{
+    fill: #7C818D!important;
+}
+.invoices-filters--button button:nth-child(2){
+    color: #FFFFFF;
+    padding: 11px 23px;
+}
+.Mui-focused{
+    border: unset!important;
+}
+.invoices-filters--selects{
+    display: flex;
+}
+/* .product-number--select .MuiSelect-select{
+    padding: 0!important;
+} */
