@@ -2,7 +2,8 @@ import React from 'react';
 import Menu from './components/layout/components/menu/menu';
 import './App.css';
 import Navbar from './components/layout/components/navbar/navbar';
-import Table from './components/shared/table-component/table-component'
+import Table from './components/shared/table-component/table-component';
+import InvoicesFilter from './components/shared/invoices-filter/invoices-filter';
 
 /* rest of app styles */
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <Navbar/>
       </div>
       <div className='app-main--table'>
+      <h4>Qaimələr</h4>
+      <InvoicesFilter/>
       <Table/>
       </div>
       </div>

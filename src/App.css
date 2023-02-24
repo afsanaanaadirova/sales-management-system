@@ -12,9 +12,21 @@
 .app-main--navbar{
   display: flex;
  justify-content: flex-end;
+ padding-bottom: 46px;
 }
 .app-main--table{
-  padding-top: 46px;
+  border: 1px solid #ECECEE;
+  border-radius: 12px;
+  padding: 28px 20px;
+}
+.app-main--table h4{
+ margin: 0;
+ padding: 0;
+ padding-bottom: 28px;
+ font-weight: 600;
+ font-size: 16px;
+ line-height: 22px;
+ color: #000000;
 }
 tbody img{
   width: 50px;

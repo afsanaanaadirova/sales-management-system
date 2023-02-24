@@ -42,12 +42,18 @@ const invoicesSlice = createSlice({
             const itemId = action.payload;
             state.invoices = state.invoices.filter((item) => item.id !== itemId);
           },
-        changeItemStatus: (state, action) => {
-            const index = state.invoices.findIndex(item => item.id === action.payload.id)
+          changeItemStatus: (state, action) => {
+            const { id, status } = action.payload;
+            const index = state.invoices.findIndex(item => item.id === id);
+          
             if (index !== -1) {
-              state.invoices[index] = action.payload
+              state.invoices = [
+                ...state.invoices.slice(0, index),
+                { ...state.invoices[index], status },
+                ...state.invoices.slice(index + 1),
+              ];
             } else {
-              state.invoices.push(action.payload)
+              state.invoices.push({ id, status });
             }
           },
     }, 

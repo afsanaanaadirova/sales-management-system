@@ -1,0 +1,58 @@
+.css-1fw5qro-MuiPaper-root{
+    box-shadow: unset!important;
+}
+.css-41abqd-MuiTableContainer-root {
+    width: 100%;
+    overflow-x: unset; 
+    max-height: unset!important;
+}
+.css-i02g0k-MuiTableCell-root{
+    text-align: left!important;
+    min-width: 100px!important;
+    font-weight: 400!important;
+    font-size: 12px!important;
+    line-height: 16px!important;
+}
+.css-y8ay40-MuiTableCell-root{
+    min-width: 100px!important;
+    font-weight: 400!important;
+    font-size: 12px!important;
+    line-height: 16px!important;
+}
+svg.icon.icon-arrow-down {
+    margin-left: 4px;
+    padding-bottom: 1px;
+}
+.css-1ex1afd-MuiTableCell-root{
+    font-weight: 700!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+    color: #0C1230!important;
+}
+.css-177gid-MuiTableCell-root{
+    text-align: left!important;
+    font-weight: 700!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+    color: #0C1230!important;  
+}
+.status-label{
+    padding: 6px 12px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.status-label--confirmed{
+    background: #ECFDF3;
+    color: #488C6E;
+}
+.status-label--wait{
+    background: #FFFAE8;
+    color: #E0B300;
+}
+.status-label--cancel{
+    background: #FFF7F7;
+    color: #FF463D;
+}

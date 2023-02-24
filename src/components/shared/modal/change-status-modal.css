@@ -41,19 +41,19 @@
     text-decoration: none;
     display: inline-block;
 }
-.status-confirm a{
+.status li:nth-child(1) a{
   background-color: var(--status-confirm-bg-color);
   color: var(--status-confirm-color);
 }
-
-.status-wait a{
+.status li:nth-child(2) a{
   background-color: var(--status-wait-bg-color);
   color: var(--status-wait-color);
 }
-.status-terminated a{
+.status li:nth-child(3) a{
   background-color: var(--status-terminated-bg-color);
   color: var(--status-terminated-color);
 }
+
 .status-modal .buttons{
     display: flex;
     column-gap: 16px;
@@ -62,7 +62,7 @@
 .status-modal .button-component{
   padding: 11px 22.5px!important;
 }
-.active-status a{
+.status li a.active{
     border: 2px solid;
 }
 

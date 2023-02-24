@@ -73,5 +73,19 @@
         "status": "təstiqlənib",
         "url": "https://www.masslive.com/resizer/kNl3qvErgJ3B0Cu-WSBWFYc1B8Q=/arc-anglerfish-arc2-prod-advancelocal/public/W5HI6Y4DINDTNP76R6CLA5IWRU.jpeg"
       }   
+    ],
+    "statuses":[
+     {
+      "id":1,
+      "status": "təstiqlənib"
+     },
+     {
+      "id":2,
+      "status": "gözləyir"
+     },
+     {
+      "id":3,
+      "status": "xitam olunub"
+     }
     ]
 }
