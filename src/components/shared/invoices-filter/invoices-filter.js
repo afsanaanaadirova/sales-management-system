@@ -9,6 +9,7 @@ import Icon from "../../../assets/images/icons/icon";
 import { useSelector, useDispatch } from "react-redux";
 import {selecetAllInvoices,fetchinvoices} from "../../../features/invoice/invoiceSlice";
 import {selecetAllstatuses,fetchstatuses } from '../../../features/status/statusSlice'
+import AddModal from "../modal/add-modal";
 import "./invoices-filter.css";
 import { useState,useEffect } from "react";
 
@@ -16,6 +17,8 @@ const InvoicesFilter = () => {
   const [productNumber, setProductNumber] = useState("");
   const [amount, setAmount] = useState("");
   const [filterStatus, setFilterStatus] = useState("");
+
+  const [showAddModal, setShowAddModal] = useState(false);
 
   const handleChangeProductNumber = (event) => {
     setProductNumber(event.target.value);
@@ -25,6 +28,10 @@ const InvoicesFilter = () => {
   };  
   const handleChangeFilterStatus = (event) => {
     setFilterStatus(event.target.value);
+  };
+ 
+  const closeSatusModal = () => {
+    setShowAddModal(false)
   };
 
   const dispatch = useDispatch();
@@ -53,10 +60,11 @@ const InvoicesFilter = () => {
             <Icon name="filter" size={15} />
             Filter
           </ButtonSecondaryComponent>
-          <ButtonComponent>
+          <ButtonComponent onClick={()=>setShowAddModal(true)}>
             <Icon name="plus" size={15} />
             Yeni qaimə
           </ButtonComponent>
+          <AddModal showAddModal={showAddModal} closeSatusModal={closeSatusModal} />
         </div>
       </div>
       <div className="invoices-filters--selects">
