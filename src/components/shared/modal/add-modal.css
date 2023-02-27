@@ -1,0 +1,33 @@
+.MuiBox-root.css-1wnsr1i {
+    width: 1136px;
+    padding: 30px!important;
+}
+.add-modal--top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.customer-select{
+    width: 447px;
+    background: #FAFCFE;
+    border: 1px solid #EDEFF1!important;
+    border-radius: 10px;
+    height: 40px;
+}
+.customer-select-label{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+    padding-bottom: 8px;
+}
+.icon-search{
+    position: absolute;
+    top: 42px;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+}
+.MuiSelect-select{
+    padding-left: 46px!important;
+}
