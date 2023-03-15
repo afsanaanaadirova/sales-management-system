@@ -7,20 +7,21 @@
     justify-content: space-between;
     align-items: center;
 }
-.customer-select{
+.select-input{
     width: 447px;
     background: #FAFCFE;
     border: 1px solid #EDEFF1!important;
     border-radius: 10px!important;
     height: 50px;
 }
-.customer-select-label{
+.select-input-label{
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
     color: #000000;
     padding-bottom: 8px;
 }
+
 .icon-search{
     position: absolute;
     top: 47px;
@@ -61,4 +62,37 @@
 .add-modal--selects .css-3qbkez-MuiSelect-icon,.MuiSelect-iconOpen{
     top: calc(50% - 0.1em)!important;
     right: 17px!important;
+}
+.select-input-item{
+    display: flex!important;
+    justify-content: space-between!important;
+}
+.select-input-item div span{
+    padding-left: 5px;
+}
+.select-input-item div:nth-child(1){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+}
+.select-input-item div:nth-child(2){
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+}
+.add-modal--selects .button-component.button-component--add{
+    margin-bottom: 10px;
+    padding: 14px 28.5px;
+}
+.add-modal--selects{
+    display: flex;
+    align-items: flex-end;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+    display: flex;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select div:nth-child(2){
+    padding-left: 10px;
 }

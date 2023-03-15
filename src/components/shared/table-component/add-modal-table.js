@@ -12,33 +12,27 @@ import { selecetAllInvoices,fetchinvoices} from "../../../features/invoice/invoi
 import { useEffect,useState } from "react";
 import ThreeDotsMenu from "./threedots"
 import "./table-component.css"
+import "./add-modal-table.css"
 import Icon from '../../../assets/images/icons/icon';
 
 
 const columns = [
-  { id: 'invoiceNumber', label: 'Qaimə №', minWidth: 170 },
-  { id: 'customer', label: 'Müştəri', minWidth: 100 },
+  { id: 'name', label: 'Məhsul adı', minWidth: 170 },
   {
     id: 'productNumber',
-    label: 'Məhsul sayı',
+    label: 'Miqdar',
     minWidth: 170,
-    align: 'right',
+    align: 'left',
     format: (value) => value.toLocaleString('en-US'),
   },
+  { id: 'price', label: 'Qiymət', minWidth: 170 },
   {
     id: 'totalAmount',
     label: 'Toplam məbləğ',
     minWidth: 170,
-    align: 'right',
+    align: 'left',
     format: (value) => value.toLocaleString('en-US'),
   },
-  {
-    id: 'status',
-    label: 'Status',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  }
 ];
 
 
@@ -68,7 +62,7 @@ const StickyHeadTable = () => {
     setPage(0);
   };
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }} className="table-component">
+    <Paper sx={{ width: '100%', overflow: 'hidden' }} className="add-modal">
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -83,10 +77,11 @@ const StickyHeadTable = () => {
                   <Icon name="arrow-down" size={6}/>
                 </TableCell>
               ))}
+              <TableCell>Əmrlər</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {invoices
+           {invoices
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
@@ -95,10 +90,7 @@ const StickyHeadTable = () => {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                         {column.id == "customer" ? <img src={row.url}/> :""}
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : column.label === "Status" ? <>{value == "təstiqlənib" ? <span className='status-label status-label--confirmed'>təstiqlənib</span> : value == "gözləyir" ? <span className='status-label status-label--wait'>gözləyir</span>: value == "xitam olunub" ? <span className='status-label status-label--cancel'>xitam olunub</span>: value}</> : value}
+                          {value}
                         </TableCell>
                       );
                     })}
@@ -107,8 +99,7 @@ const StickyHeadTable = () => {
                         </TableCell>
                   </TableRow>
                 );
-              })}
-              
+              })} 
           </TableBody>
         </Table>
       </TableContainer>

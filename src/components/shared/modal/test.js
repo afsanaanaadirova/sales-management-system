@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -9,15 +9,12 @@ import ButtonComponentCancel from '../button/secondary-button';
 import "./delete-modal.css"
 import "./add-modal.css"
 import Icon from '../../../assets/images/icons/icon';
-import { invoiceAdded } from '../../../features/invoice/invoiceSlice'
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../../../features/invoice/invoiceSlice'
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import AddModalTable from "../table-component/add-modal-table";
-import { useSelector, useDispatch } from "react-redux";
-import { selecetAllInvoices,fetchinvoices} from "../../../features/invoice/invoiceSlice";
-
-
+import AddModalTable from "../table-component/add-modal-table"
 
 const style = {
   position: 'absolute',
@@ -46,17 +43,7 @@ const NewIcon = (props) => (
   );
   
 export default function AddModal({showAddModal,closeSatusModal}) {
-  const[customer,setCustomer]=useState('');
-  const[product,setProduct]=useState(null);
-
-  
   const dispatch = useDispatch();
-
-  const invoices = useSelector(selecetAllInvoices);
-
-  useEffect(() => {
-      dispatch(fetchinvoices())
-  }, [])
 
 
   return (
@@ -87,13 +74,16 @@ export default function AddModal({showAddModal,closeSatusModal}) {
             MenuProps={MenuProps}
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
-              onChange={(e)=>setCustomer(e.target.value)}
             >
-              {invoices.map((item)=>{
-                return (
-                      <MenuItem value={item.customer}>{item.customer}</MenuItem>
-                )
-              })}
+              <MenuItem value={10}>Azər Azərov</MenuItem>
+              <MenuItem value={4}>Qocayev Eldar</MenuItem>
+              <MenuItem value={2}>Qocayev Eldar</MenuItem>
+              <MenuItem value={9}>Qocayev Eldar</MenuItem>
+              <MenuItem value={9876}>Qocayev Eldar</MenuItem>
+              <MenuItem value={7}>Qocayev Eldar</MenuItem>
+              <MenuItem value={0}>Qocayev Eldar</MenuItem>
+              <MenuItem value={9876}>Qocayev Eldar</MenuItem>
+              <MenuItem value={2345}>Qocayev Eldar</MenuItem>
             </Select>
             <Icon name="search" size={15} className="testt"/>
             </FormControl>
@@ -105,31 +95,24 @@ export default function AddModal({showAddModal,closeSatusModal}) {
             MenuProps={MenuProps}
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
-              onChange={(e)=>setProduct(e.target.value)}
             >
-                {invoices.map((item)=>{
-                return (
-                  <MenuItem  value={{
-                    name: item.name,
-                    productNumber: item.productNumber,
-                    price: item.price
-                  }}
-                  className="select-input-item"><div>{item.name}<span>({item.productNumber} ədəd)</span></div><div>{item.price}<span>AZN</span></div></MenuItem>
-                )
-              })}
-              {console.log(product)}
+              <MenuItem value={10} className="select-input-item"><div>Düyü<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={20} className="select-input-item"><div>Salmon balıq<span>(12 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={30} className="select-input-item"><div>Ariel<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={40} className="select-input-item"><div>Qatıq<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={12} className="select-input-item"><div>Qatıq<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={48} className="select-input-item"><div>Qatıq<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={41} className="select-input-item"><div>Qatıq<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
+              <MenuItem value={44} className="select-input-item"><div>Qatıq<span>(10 ədəd)</span></div><div>3,5<span>AZN</span></div></MenuItem>
             </Select>
             <Icon name="search" size={15} className="testt"/>
             </FormControl>
-            <ButtonComponent onClick={()=>dispatch(invoiceAdded({id:1,customer,product}))}><Icon name="plus" size={15} /></ButtonComponent>
-            <ButtonComponent onClick={()=>console.log(dispatch(invoiceAdded({id:1,customer,product})))}><Icon name="plus" size={15} /></ButtonComponent>
+            <ButtonComponent><Icon name="plus" size={15} /></ButtonComponent>
             </div>
-            <AddModalTable/>
           </Box>
-         
         </Fade>
+        {/* <AddModalTable/> */}
       </Modal>
-
     </div>
   );
 }
