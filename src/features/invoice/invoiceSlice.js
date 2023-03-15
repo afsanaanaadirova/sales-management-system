@@ -24,18 +24,18 @@ const invoicesSlice = createSlice({
             reducer(state, action) {
                 state.invoices.push(action.payload)
             },
-            prepare(invoiceNumber, customer,productNumber,totalAmount,status) {
-                return {
-                    payload: {
-                        id: nanoid(),
-                        invoiceNumber,
-                        customer,
-                        productNumber,
-                        totalAmount,
-                        status
-                    }
-                }
-            }, 
+            // prepare(invoiceNumber,customer,productNumber,totalAmount,status) {
+            //     return {
+            //         payload: {
+            //             id: nanoid(),
+            //             invoiceNumber,
+            //             customer,
+            //             productNumber,
+            //             totalAmount,
+            //             status
+            //         }
+            //     }
+            // }, 
           
         },
         removeItem: (state, action) => {

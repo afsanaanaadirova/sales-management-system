@@ -34,12 +34,12 @@ tbody img{
   border-radius: 50%;
   object-fit: cover;
 }
-tbody tr td:nth-child(2){
+.table-component tbody tr td:nth-child(2){
   display: flex;
   align-items: center;
   column-gap: 10px;
 }
-tbody td{
+.table-component tbody td{
   color:var(--secondary-color)!important;
 }
 .icon-three-dots{
